@@ -3,6 +3,7 @@ package com.example.elibrary;
 public class Book {
     private int id, pages;
     private String name, author, imageUrl, shortDesc, longDesc;
+    private Boolean isExpanded;
 
     public Book(int id, int pages, String name, String author, String imageUrl, String shortDesc, String longDesc) {
         this.id = id;
@@ -12,6 +13,7 @@ public class Book {
         this.imageUrl = imageUrl;
         this.shortDesc = shortDesc;
         this.longDesc = longDesc;
+        this.isExpanded = false;
     }
 
     public int getId() {
@@ -68,6 +70,14 @@ public class Book {
 
     public void setLongDesc(String longDesc) {
         this.longDesc = longDesc;
+    }
+
+    public Boolean getExpanded() {
+        return isExpanded;
+    }
+
+    public void setExpanded(Boolean expanded) {
+        isExpanded = expanded;
     }
 
     @Override

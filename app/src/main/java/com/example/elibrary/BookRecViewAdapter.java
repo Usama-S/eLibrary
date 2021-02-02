@@ -1,11 +1,13 @@
 package com.example.elibrary;
 
 import android.content.Context;
+import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +51,19 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
                 Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_SHORT).show();
             }
         });
+
+        holder.txtAuthor.setText(books.get(position).getAuthor());
+        holder.txtDescription.setText(books.get(position).getShortDesc());
+
+        if(books.get(position).getExpanded()){
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedLayout.setVisibility(View.VISIBLE);
+            holder.downArrow.setVisibility(View.GONE);
+        } else {
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedLayout.setVisibility(View.GONE);
+            holder.downArrow.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -61,11 +76,18 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
         notifyDataSetChanged();
     }
 
+//  =================== Inner Class =========================
+
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private CardView parent;
         private ImageView imgBook;
         private TextView txtName;
+
+//        expanded layout views
+        private ImageView upArrow, downArrow;
+        private TextView txtAuthor, txtDescription;
+        private RelativeLayout expandedLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,6 +95,31 @@ public class BookRecViewAdapter extends RecyclerView.Adapter<BookRecViewAdapter.
             parent = itemView.findViewById(R.id.listItemParent);
             imgBook = itemView.findViewById(R.id.imgBook);
             txtName = itemView.findViewById(R.id.txtName);
+
+//            expanded layout views
+            downArrow = itemView.findViewById(R.id.expandArrowIcon);
+            upArrow = itemView.findViewById(R.id.collapseArrowIcon);
+            txtAuthor = itemView.findViewById(R.id.txtAuthor);
+            txtDescription = itemView.findViewById(R.id.txtDescription);
+            expandedLayout = itemView.findViewById(R.id.expandedLayout);
+
+            downArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.getExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+            upArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.getExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
         }
     }
 }
