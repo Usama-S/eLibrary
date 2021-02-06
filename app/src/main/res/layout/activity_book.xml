@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/imgBook"
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="20dp"
+                android:src="@color/black"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@+id/imgBook"
+                app:layout_constraintTop_toTopOf="@+id/imgBook"
+                app:layout_constraintRight_toRightOf="parent"
+                >
+
+                <Button
+                    android:id="@+id/btnCurrentlyReading"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Currently Reading"
+                    android:textAllCaps="false"
+                    />
+
+                <Button
+                    android:id="@+id/btnAddToWishlist"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Add to Wishlist"
+                    android:textAllCaps="false"
+                    />
+
+                <Button
+                    android:id="@+id/btnAlreadyRead"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Already Read"
+                    android:textAllCaps="false"
+                    />
+
+                <Button
+                    android:id="@+id/btnAddToFavourites"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:text="Add to Favourites"
+                    android:textAllCaps="false"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/nameLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name  :   "
+                app:layout_constraintTop_toBottomOf="@+id/imgBook"
+                android:layout_marginTop="50dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                app:layout_constraintLeft_toRightOf="@+id/nameLbl"
+                app:layout_constraintTop_toTopOf="@id/nameLbl"
+                />
+
+            <TextView
+                android:id="@+id/authorLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author  :   "
+                app:layout_constraintTop_toBottomOf="@+id/txtName"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/txtAuthor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author"
+                app:layout_constraintLeft_toRightOf="@+id/authorLbl"
+                app:layout_constraintTop_toTopOf="@id/authorLbl"
+                />
+
+            <TextView
+                android:id="@+id/pagesLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pages  :   "
+                app:layout_constraintTop_toBottomOf="@+id/txtAuthor"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/txtPages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="352"
+                app:layout_constraintLeft_toRightOf="@+id/pagesLbl"
+                app:layout_constraintTop_toTopOf="@id/pagesLbl"
+                />
+
+            <TextView
+                android:id="@+id/descriptionLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description  :   "
+                app:layout_constraintTop_toBottomOf="@+id/txtPages"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionLbl"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:justificationMode="inter_word"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
