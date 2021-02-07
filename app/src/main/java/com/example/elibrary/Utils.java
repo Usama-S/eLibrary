@@ -56,7 +56,7 @@ public class Utils {
 
     }
 
-    public static Utils getInstance(){
+    public static synchronized Utils getInstance(){
         if (null != instance){
             return instance;
         }
@@ -85,7 +85,7 @@ public class Utils {
         return favouriteBooks;
     }
 
-    public static Book getBookById(int bookId){
+    public Book getBookById(int bookId){
         for (Book b : allBooks) {
             if (b.getId() == bookId){
                 return b;
@@ -93,4 +93,22 @@ public class Utils {
         }
         return null;
     }
+
+    public boolean addToAlreadyReadBooks(Book book){
+        return alreadyReadBooks.add(book);
+    }
+
+    public boolean addToWishlist(Book book){
+        return wishlist.add(book);
+    }
+
+    public boolean addToCurrentlyReading(Book book){
+        return currentlyReadingBooks.add(book);
+    }
+
+    public boolean addToFavourites(Book book){
+        return favouriteBooks.add(book);
+    }
+
+
 }
