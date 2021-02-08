@@ -107,6 +107,19 @@
                 android:layout_margin="5dp"
                 />
 
+            <TextView
+                android:id="@+id/txtDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textColor="@color/red"
+                android:layout_below="@+id/txtDescription"
+                android:layout_toStartOf="@+id/collapseArrowIcon"
+                android:layout_marginEnd="20dp"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone"
+                />
+
         </RelativeLayout>
 
     </RelativeLayout>

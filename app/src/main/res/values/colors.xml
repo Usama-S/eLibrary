@@ -7,6 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    custom colors-->
+
     <color name="app_theme1">#1fb0df</color>
     <color name="app_theme2">#1272be</color>
+    <color name="red">#FF0000</color>
 </resources>

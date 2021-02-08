@@ -110,5 +110,19 @@ public class Utils {
         return favouriteBooks.add(book);
     }
 
+    public boolean removeFromAlreadyReadBooks(Book book){
+        return alreadyReadBooks.remove(book);
+    }
 
+    public boolean removeFromWishlist(Book book){
+        return wishlist.remove(book);
+    }
+
+    public boolean removeFromCurrentlyReading(Book book){
+        return currentlyReadingBooks.remove(book);
+    }
+
+    public boolean removeFromFavourites(Book book){
+        return favouriteBooks.remove(book);
+    }
 }
