@@ -18,7 +18,7 @@ public class AlreadyReadBookActivity extends AppCompatActivity {
 
         BookRecViewAdapter adapter = new BookRecViewAdapter(this);
 
-        adapter.setBooks(Utils.getInstance().getAlreadyReadBooks());
+        adapter.setBooks(Utils.getInstance(this).getAlreadyReadBooks());
 
         alreadyReadRecView.setAdapter(adapter);
 

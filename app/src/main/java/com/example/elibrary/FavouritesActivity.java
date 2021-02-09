@@ -18,7 +18,7 @@ public class FavouritesActivity extends AppCompatActivity {
 
         BookRecViewAdapter adapter = new BookRecViewAdapter(this);
 
-        adapter.setBooks(Utils.getInstance().getFavouriteBooks());
+        adapter.setBooks(Utils.getInstance(this).getFavouriteBooks());
 
         favouritesRecView.setAdapter(adapter);
 

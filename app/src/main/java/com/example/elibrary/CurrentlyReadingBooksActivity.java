@@ -18,7 +18,7 @@ public class CurrentlyReadingBooksActivity extends AppCompatActivity {
 
         BookRecViewAdapter adapter = new BookRecViewAdapter(this);
 
-        adapter.setBooks(Utils.getInstance().getCurrentlyReadingBooks());
+        adapter.setBooks(Utils.getInstance(this).getCurrentlyReadingBooks());
 
         currentlyReadingBooksRecView.setAdapter(adapter);
 

@@ -18,7 +18,7 @@ public class WishlistActivity extends AppCompatActivity {
 
         BookRecViewAdapter adapter = new BookRecViewAdapter(this);
 
-        adapter.setBooks(Utils.getInstance().getWishlist());
+        adapter.setBooks(Utils.getInstance(this).getWishlist());
 
         wishlistRecView.setAdapter(adapter);
 
